@@ -4,4 +4,8 @@
 
 <script setup>
 const route = useRoute();
+
+useHead({
+  title: `article #${route.params.id}`,
+});
 </script>

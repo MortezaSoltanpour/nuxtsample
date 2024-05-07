@@ -27,7 +27,7 @@
             ><NuxtLink to="/articles/1">Id 1</NuxtLink></span
           >
           <span class="navitem"
-            ><NuxtLink to="/articles/2">Id 1</NuxtLink></span
+            ><NuxtLink to="/articles/2">Id 2</NuxtLink></span
           >
           <span class="navitem"
             ><NuxtLink to="/articles/2/all/new/today">cacth all</NuxtLink></span
@@ -40,6 +40,16 @@
     <NuxtPage />
   </div>
 </template>
+
+<script setup>
+useHead({
+  // titleTemplate: "%s  | Mehregan",
+  titleTemplate: (title) => {
+    return title ? `${title} | Mehregan` : "Mehregan.com";
+  },
+});
+</script>
+
 <style>
 html {
   padding: 20px;

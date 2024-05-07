@@ -9,4 +9,8 @@
 
 <script setup>
 const route = useRoute();
+
+useHead({
+  title: `page ${route.params.slug}`,
+});
 </script>
