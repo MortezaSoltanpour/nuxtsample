@@ -5,4 +5,11 @@
     <Body class="classTest"></Body>
   </Head>
   <h1>this is contact page</h1>
+  <button @click="changelayout">Change Layout</button>
 </template>
+
+<script setup>
+function changelayout() {
+  setPageLayout("custom");
+}
+</script>
