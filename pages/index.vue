@@ -17,11 +17,15 @@
   <br />
   <h2>Pinia counter : {{ counterPinia.countPinia }}</h2>
   <br />
-  <button @click="counterPinia.incrementPinia(3)">Increment</button>
-  <button @click="counterPinia.decrementPinia(3)">Decrement</button>
+  <button @click="counterPinia.incrementPinia(count)">Increment</button>
+  <button @click="counterPinia.decrementPinia(count)">Decrement</button>
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: "log",
+});
+
 const { count, increment, decrement } = useCounter();
 
 import { useCounterPinia } from "../stores/counterPinia";

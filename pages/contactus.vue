@@ -9,6 +9,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: "log",
+});
+
 function changelayout() {
   setPageLayout("custom");
 }

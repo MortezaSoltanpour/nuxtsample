@@ -25,6 +25,7 @@ const counterPinia = useCounterPinia();
 definePageMeta({
   layout: false,
   layout: "custom",
+  middleware: ["log"],
 });
 
 useHead({
