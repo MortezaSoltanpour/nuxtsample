@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="header">
-      <Nav />
+      <PublicNav />
     </header>
     <div class="container">
       <slot />
@@ -11,7 +11,9 @@
 </template>
 
 <script setup>
-import Nav from "./../components/public/nav.vue";
+if (process.client) {
+  localStorage.setItem("name", "Morteza Soltanpour");
+}
 </script>
 <style scoped>
 .container {
