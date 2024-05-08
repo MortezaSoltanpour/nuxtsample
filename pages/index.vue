@@ -5,6 +5,7 @@
     <Body class="classTest"></Body>
   </Head>
   <h1>this is home page</h1>
+  <h1>{{ $hello("Morteza Soltanpour") }}</h1>
   <button @click="showabout">Show about us</button>
   <br />
   <br />
@@ -19,9 +20,22 @@
   <br />
   <button @click="counterPinia.incrementPinia(count)">Increment</button>
   <button @click="counterPinia.decrementPinia(count)">Decrement</button>
+  <br />
+  <br />
+  <br />
+  <button @click="showToast">Show Toast</button>
 </template>
 
 <script setup>
+const { $hello } = useNuxtApp();
+import { useToast } from "vue-toastification";
+const toast = useToast();
+function showToast() {
+  toast.success("this is a sample toast", {
+    timeout: 2000,
+  });
+}
+
 definePageMeta({
   middleware: "log",
 });

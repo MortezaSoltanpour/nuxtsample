@@ -14,5 +14,8 @@ export default defineNuxtConfig({
   // }
   modules:[
     '@pinia/nuxt'
-  ]
+  ],
+  build:{
+    transpile:['vue-toastification']
+  }
 })
