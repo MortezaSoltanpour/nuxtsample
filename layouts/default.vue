@@ -5,6 +5,10 @@
     </header>
     <div class="container">
       <slot />
+      <br />
+      <img src="/images/image1.jpg" width="100" />
+      <br />
+      <nuxt-img src="/images/image1.jpg" width="100" />
     </div>
     <footer class="footer">this is footer</footer>
   </div>
