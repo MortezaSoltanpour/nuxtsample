@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   //   }
   // }
   modules:['@pinia/nuxt', "@nuxt/image"],
-  css:['~/assets/css/bootstrap.min.css','~/assets/sass/main.scss'],
+  css:['~/assets/css/main.css','~/assets/sass/main.scss'],
   build:{
     transpile:['vue-toastification']
   }

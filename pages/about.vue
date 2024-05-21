@@ -14,11 +14,53 @@
   <br />
   <button @click="counterPinia.incrementPinia(count)">Increment</button>
   <button @click="counterPinia.decrementPinia(count)">Decrement</button>
+
+  <hr />
+  <h2>Toast</h2>
+  <br />
+  <button
+    @click="showToast"
+    type="button"
+    class="btn btn-primary"
+    id="liveToastBtn"
+  >
+    Show live toast
+  </button>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div
+      ref="liveToast"
+      id="liveToast"
+      class="toast"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="toast-header">
+        <strong class="me-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="toast-body">Hello, world! This is a toast message.</div>
+    </div>
+  </div>
 </template>
 
 <script setup>
 const { count, increment, decrement } = useCounter();
 import { useCounterPinia } from "../stores/counterPinia";
+
+const { $bootstrap } = useNuxtApp();
+const liveToast = ref(null);
+function showToast() {
+  const toast = new $bootstrap.Toast(liveToast.value);
+  toast.show();
+}
 
 const counterPinia = useCounterPinia();
 

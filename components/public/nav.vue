@@ -1,39 +1,85 @@
 <template>
-  <nav>
-    <div style="display: flex; flex-direction: row">
-      <span class="navitem"><NuxtLink to="/">Home</NuxtLink></span>
-      <span class="navitem"><NuxtLink to="/about">about</NuxtLink></span>
-      <span class="navitem"
-        ><NuxtLink to="/contactus">contactus</NuxtLink></span
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
       >
-      <span class="navitem subnav"
-        ><NuxtLink to="/posts">posts</NuxtLink>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <NuxtLink class="nav-link active" aria-current="page" to="/"
+              >Home</NuxtLink
+            >
+          </li>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/about">about us</NuxtLink>
+          </li>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/contactus">contact us</NuxtLink>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              posts
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <NuxtLink class="dropdown-item" to="/posts/first"
+                  >first</NuxtLink
+                >
+              </li>
+              <li>
+                <NuxtLink class="dropdown-item" to="/posts/second"
+                  >second</NuxtLink
+                >
+              </li>
+            </ul>
+          </li>
 
-        <div class="subnav-content">
-          <span class="navitem"
-            ><NuxtLink to="/posts/first">first posts</NuxtLink></span
-          >
-          <span class="navitem"
-            ><NuxtLink to="/posts/second">second posts</NuxtLink></span
-          >
-        </div>
-      </span>
-
-      <span class="navitem subnav"
-        ><NuxtLink to="/articles">articles</NuxtLink>
-
-        <div class="subnav-content">
-          <span class="navitem"
-            ><NuxtLink to="/articles/1">Id 1</NuxtLink></span
-          >
-          <span class="navitem"
-            ><NuxtLink to="/articles/2">Id 2</NuxtLink></span
-          >
-          <span class="navitem"
-            ><NuxtLink to="/articles/2/all/new/today">cacth all</NuxtLink></span
-          >
-        </div>
-      </span>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              articles
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <NuxtLink class="dropdown-item" to="/articles/1"
+                  >Article 1</NuxtLink
+                >
+              </li>
+              <li>
+                <NuxtLink class="dropdown-item" to="/articles/2"
+                  >Article 2</NuxtLink
+                >
+              </li>
+              <li>
+                <NuxtLink class="dropdown-item" to="/articles/2/all/new/today"
+                  >Cacth all</NuxtLink
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </template>
@@ -54,50 +100,12 @@ nav {
   padding: 5px;
 }
 
-a::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #000;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-a:hover {
-  /* border: solid thick black; */
-}
-
-a:hover::before {
-  transform: scaleX(1);
-}
-.navitem:not(:last-child)::after {
-  content: "|";
-  padding: 0 15px;
-}
-
 .router-link-active {
   color: red !important;
 }
 
 .router-link-exact-active {
   color: green !important;
-}
-
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
 }
 
 .subnav {
@@ -118,7 +126,7 @@ a:hover::before {
 
 .navbar a:hover,
 .subnav:hover .subnavbtn {
-  background-color: red;
+  background-color: #ededed;
 }
 
 .subnav-content {
