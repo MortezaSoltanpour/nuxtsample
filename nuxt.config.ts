@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   //     }
   //   }
   // }
-  modules:['@pinia/nuxt', "@nuxt/image"],
+  modules:['@pinia/nuxt', "@nuxt/image", "@nuxtjs/tailwindcss"],
   css:['~/assets/css/main.css','~/assets/sass/main.scss'],
   build:{
     transpile:['vue-toastification']

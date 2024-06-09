@@ -13,7 +13,11 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent"
+        style="visibility: visible"
+      >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <NuxtLink class="nav-link active" aria-current="page" to="/"
@@ -45,6 +49,11 @@
               <li>
                 <NuxtLink class="dropdown-item" to="/posts/second"
                   >second</NuxtLink
+                >
+              </li>
+              <li>
+                <NuxtLink class="dropdown-item" to="/posts/bloglist"
+                  >blog</NuxtLink
                 >
               </li>
             </ul>

@@ -23,6 +23,10 @@
   <br />
   <br />
   <br />
+  <img src="/images/image1.jpg" width="100" />
+  <br />
+  <nuxt-img src="/images/image1.jpg" width="100" />
+  <br />
   <button @click="showToast">Show Toast</button>
 </template>
 
