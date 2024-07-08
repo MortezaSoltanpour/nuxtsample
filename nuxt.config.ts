@@ -16,5 +16,11 @@ export default defineNuxtConfig({
   css:['~/assets/css/main.css','~/assets/sass/main.scss'],
   build:{
     transpile:['vue-toastification']
+  },
+  runtimeConfig:{
+    secretKey:'morTeza Soltanpour',
+    public:{
+      apiBase:'/api/..'
+    }
   }
 })

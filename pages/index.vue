@@ -31,6 +31,17 @@
 </template>
 
 <script setup>
+const appConfig = useAppConfig();
+console.log(appConfig);
+
+const runtimeConfig = useRuntimeConfig();
+console.log(runtimeConfig);
+
+const {
+  public: { apiBase },
+} = useRuntimeConfig();
+console.log(apiBase);
+
 const { $hello } = useNuxtApp();
 import { useToast } from "vue-toastification";
 const toast = useToast();
