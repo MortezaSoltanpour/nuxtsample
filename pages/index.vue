@@ -42,6 +42,8 @@ const {
 } = useRuntimeConfig();
 console.log(apiBase);
 
+console.log(process.env);
+
 const { $hello } = useNuxtApp();
 import { useToast } from "vue-toastification";
 const toast = useToast();

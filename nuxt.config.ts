@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   runtimeConfig:{
     secretKey:'morTeza Soltanpour',
     public:{
-      apiBase:'/api/..'
+      apiBase:process.env.API_BASE
     }
   }
 })
