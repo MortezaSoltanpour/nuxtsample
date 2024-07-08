@@ -2,8 +2,7 @@
   <Head>
     <Title>data</Title>
   </Head>
-
-  <h1>Blog 2</h1>
+  <h1>Blog 3</h1>
   <div v-for="post in posts" :key="post.id" style="padding: 10px 50px">
     <h4>
       <NuxtLink
@@ -21,7 +20,9 @@
   </div>
   <button @click="prev" class="btn btn-success m-3">Prev</button>
   <button @click="next" class="btn btn-success m-3">Next</button>
-  <div v-if="pending">Fetching data ...</div>
+  <div v-if="pending">Fetching data in blog 3 ...</div>
+  <br />
+  <button @click="clear" class="btn btn-danger m-3">Clear</button>
 </template>
 
 <script setup>
@@ -32,10 +33,12 @@ const {
   error,
   refresh,
   pending,
-} = await useAsyncData("posts", () =>
-  $fetch(
-    `https://jsonplaceholder.typicode.com/posts?_start=${start.value}&_limit=5`
-  )
+} = useLazyFetch(
+  () =>
+    `https://jsonplaceholder.typicode.com/posts?_start=${start.value}&_limit=5`,
+  {
+    method: "get",
+  }
 );
 
 function prev() {
@@ -48,5 +51,9 @@ function prev() {
 function next() {
   start.value += 5;
   refresh();
+}
+
+function clear() {
+  clearNuxtData();
 }
 </script>

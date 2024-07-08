@@ -61,6 +61,11 @@
                   >blog 2</NuxtLink
                 >
               </li>
+              <li>
+                <NuxtLink class="dropdown-item" to="/posts/bloglist3"
+                  >blog 3</NuxtLink
+                >
+              </li>
             </ul>
           </li>
 

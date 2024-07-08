@@ -2,6 +2,8 @@
   <Head>
     <Title>data</Title>
   </Head>
+
+  <h1>Blog 1</h1>
   <div v-if="isLoading">
     <svg
       width="30px"
