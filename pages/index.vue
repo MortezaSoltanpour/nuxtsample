@@ -66,4 +66,7 @@ const counterPinia = useCounterPinia();
 function showabout() {
   return navigateTo("/about");
 }
+
+const dataFromServer = await $fetch("/api/test");
+console.log(dataFromServer);
 </script>
